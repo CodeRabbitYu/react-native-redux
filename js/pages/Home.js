@@ -28,7 +28,7 @@ class Home extends Component {
         const { userToken } = this.props.ShiTuReducer;
         console.log(userToken);
 
-
+        // alert(userToken)
 
     }
 
@@ -43,10 +43,10 @@ class Home extends Component {
                     点我跳转页面，在下一个页面会通过redux修改当前页面状态
                 </Text>
                 <Text style={styles.instructions}>
-                    {instructions}
+                    下面是userToken，在第二个页面会被修改
                 </Text>
                 <Text style={styles.instructions}>
-                    这是通过action得到的：{ userToken }
+                    { userToken }
                 </Text>
             </View>
         );

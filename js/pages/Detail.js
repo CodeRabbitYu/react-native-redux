@@ -10,19 +10,23 @@ import {
     View
 } from 'react-native';
 
-export default class Detail extends Component {
+import { connect } from 'react-redux';
+
+import { getUserToken } from '../actions/UserToken';
+
+class Detail extends Component {
+
+    // componentDidMount(){
+    //     this.props.
+    // }
+
     render() {
         return (
-            <View style={styles.container}>
-                <Text style={styles.welcome}>
-                    Welcome to React Native!
-                </Text>
-                <Text style={styles.instructions}>
-                    To get started, edit index.android.js!!
-                </Text>
-                <Text style={styles.instructions}>
-                    Double tap R on your keyboard to reload,{'\n'}
-                    Shake or press menu button for dev menu
+            <View style={styles.container} >
+                <Text style={styles.welcome} onPress={()=>{
+                    this.props.getUserToken('hahaha');
+                }}>
+                    点我修改userToken！
                 </Text>
             </View>
         );
@@ -47,4 +51,11 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
 });
+
+export default connect((state) => {
+    const { ShiTuReducer } = state;
+    return {
+        ShiTuReducer,
+    };
+},{ getUserToken })(Detail)
 
