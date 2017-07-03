@@ -13,6 +13,7 @@ import { connect } from 'react-redux';
 
 import { userToken } from '../actions/UserToken';
 
+let instructions = '这是未修改的文字';
 
 class Home extends Component {
     componentDidMount() {
@@ -28,6 +29,7 @@ class Home extends Component {
         console.log(userToken);
 
 
+
     }
 
     render() {
@@ -35,14 +37,16 @@ class Home extends Component {
         console.log(userToken);
         return (
             <View style={styles.container}>
-                <Text style={styles.welcome}>
-                    Welcome to React Native!  ！！
+                <Text style={styles.welcome} onPress={()=>{
+                    this.props.navigation.navigate('Detail');
+                }}>
+                    点我跳转页面，在下一个页面会通过redux修改当前页面状态
                 </Text>
                 <Text style={styles.instructions}>
-                    To get started, edit index.android.js!!
+                    {instructions}
                 </Text>
                 <Text style={styles.instructions}>
-                    { userToken }
+                    这是通过action得到的：{ userToken }
                 </Text>
             </View>
         );
@@ -65,6 +69,8 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#333333',
         marginBottom: 5,
+        fontSize:18,
+        marginTop:10
     },
 });
 

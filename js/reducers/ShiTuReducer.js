@@ -17,6 +17,7 @@ export default function ShiTuReducer(state = initialState, action){
                 // ...state,
                 userToken: action.userToken,
             });
+            case types.
         default:
             return state;
     }

@@ -3,5 +3,5 @@
  */
 // 用户Token
 export const USER_TOKEN_SUCCESS = 'USER_TOKEN_SUCCESS';
-// 首页背景图片
-export const BACKIMAGE_URL = 'BACKIMAGE_URL';
+// 首页的
+export const HOME_INSTRUCTIONS = 'HOME_INSTRUCTIONS';
