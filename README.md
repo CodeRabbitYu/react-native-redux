@@ -1,0 +1,2 @@
+# react-native-redux
+如果遇到在Demo中遇到什么问题，欢迎加入QQ群：397885169交流
