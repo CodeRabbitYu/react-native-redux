@@ -16,9 +16,11 @@ import { getUserToken } from '../actions/UserToken';
 
 class Detail extends Component {
 
-    // componentDidMount(){
-    //     this.props.
-    // }
+    componentDidMount(){
+        const {routes} = this.props;
+        // 会有意想不到的惊喜哦！
+        console.log(routes);
+    }
 
     render() {
         return (
@@ -54,8 +56,10 @@ const styles = StyleSheet.create({
 
 export default connect((state) => {
     const { ShiTuReducer } = state;
+    const routes  = state.nav.routes;
     return {
         ShiTuReducer,
+        routes
     };
 },{ getUserToken })(Detail)
 

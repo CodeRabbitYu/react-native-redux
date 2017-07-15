@@ -19,6 +19,10 @@ class Home extends Component {
     componentDidMount() {
         console.log('componentDidMount');
         this.props.userToken();
+
+        const {routes} = this.props;
+        // 会有意想不到的惊喜哦！
+        console.log(routes);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -76,7 +80,9 @@ const styles = StyleSheet.create({
 
 export default connect((state) => {
     const { ShiTuReducer } = state;
+    const routes  = state.nav.routes;
     return {
         ShiTuReducer,
+        routes
     };
 },{ userToken})(Home)
