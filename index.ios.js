@@ -3,6 +3,7 @@
  * https://github.com/facebook/react-native
  * @flow    
  * 大聪明是我
+ * 我是大聪明
  */
 
 global.__APP__ = true;
